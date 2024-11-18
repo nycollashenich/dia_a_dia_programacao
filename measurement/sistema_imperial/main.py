@@ -1,29 +1,37 @@
-fatores_metros = {
-    'mm' : 0.001, # 1 milimetro = 0.001 m
-    'cm' : 0.01, # 1 centimetro = 0.01 m
-    'm' : 1, # metro é igual a 1
-    'km' : 1000 # 1 km = 1000 m
+FatoresMetrosImperial = {
+    'polegada' : 0.0254, # 1 polegada = 0.0254m
+    'pés' : 0.3048,
+    'jarda' : 0.9144,
+    'milha' : 1609.34,
+    'metro' : 1
 }
 
-
-# converte para a medida padrão = metros
-def converter_metros(value_initial, source_unit):
-    if source_unit in fatores_metros: # verifica se a medida inicial está no dicionário (fatores_metros)
-        return value_initial * fatores_metros[source_unit]
+def ConversaoMetros(value_initial, source_unit):
+    if source_unit in FatoresMetrosImperial:
+        return value_initial * FatoresMetrosImperial[source_unit]
     else:
-        raise ValueError(f'Unidade de medida desconhecida: {source_unit}')
+        raise ValueError('Unidade de medida desconhecida.')
 
+def MetrosDestination(valor_metros, destination_unit):
+    if destination_unit in FatoresMetrosImperial:
+        return valor_metros / FatoresMetrosImperial[destination_unit]
+    else:
+        raise ValueError('Unidade de medida desconhecida.')
 
-# def metros_destination():
-    #pass
 
 def main():
-    print('Conversor de unidades métricas - Imperial')
-
-    source_unit = input('Digite a unidade de origem:\n[mm] - [cm] - [m] - [km]\n').lower()
-    # destination_unit = input('Digite a unidade de distino:\n[mm] - [cm] - [m] - [km]\n').lower()
-    value_initial = float(input('Insira o valor que será convertido: '))
     
-    print(converter_metros(value_initial, source_unit))
+    print('Conversão Medidas Imperiais')
+
+    source_unit = input('Informe a medida de ORIGEM: \n[Polegada] - [Pés] - [Jarda] - [Milha] - [Metro]\n').lower()
+    destination_unit = input('Informe a medida de DESTINO: \n[Polegada] - [Pés] - [Jarda] - [Milha] - [Metro]\n').lower()
+    value_initial = float(input('Insira o valor que será convertido: '))
+
+    valor_metros = ConversaoMetros(value_initial, source_unit)
+    result_final = MetrosDestination(valor_metros, destination_unit)
+
+    print(f'Unidade de origem: {value_initial}\nUnidade de destino: {destination_unit}\nResultado final: {result_final} {destination_unit}')
+    
 
 main()
+
