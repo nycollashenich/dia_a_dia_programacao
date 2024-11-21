@@ -10,13 +10,13 @@ FatoresMetrosMetrico = {
 
 
 # converte para a medida padrão = metros
-def ConversaoMetros(value_initial, source_unit):
+def MetricoConversaoMetro(value_initial, source_unit):
     if source_unit in FatoresMetrosMetrico: # verifica se a medida inicial está no dicionário (fatores_metros)
         return value_initial * FatoresMetrosMetrico[source_unit]
     else:
         raise ValueError(f'Unidade de medida desconhecida: {source_unit}')
 
-def MetrosDestino(value_metros, destination_unit):
+def MetricoMetroDestino(value_metros, destination_unit):
     if destination_unit in FatoresMetrosMetrico:
         return value_metros / FatoresMetrosMetrico[destination_unit]
     else:
@@ -40,8 +40,8 @@ def main_metrico():
 
         try:
             value_initial = float(input('Informe o valor que será convertido: '))
-            value_metro = ConversaoMetros(value_initial, source_unit)
-            value_final = MetrosDestino(value_metro, destination_unit)
+            value_metro = MetricoConversaoMetro(value_initial, source_unit)
+            value_final = MetricoMetroDestino(value_metro, destination_unit)
 
             print(f'\nUnidade de origem | {value_initial}{source_unit}')
             print(f'Unidade de destino | {value_final}{destination_unit}')

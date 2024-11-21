@@ -6,13 +6,13 @@ FatoresMetrosImperial = {
     'metro' : 1
 }
 
-def ConversaoMetros(value_initial, source_unit):
+def ImperialConversaoMetro(value_initial, source_unit):
     if source_unit in FatoresMetrosImperial:
         return value_initial * FatoresMetrosImperial[source_unit]
     else:
         raise ValueError('Unidade de medida desconhecida.')
 
-def MetrosDestino(valor_metros, destination_unit):
+def ImperialMetroDestino(valor_metros, destination_unit):
     if destination_unit in FatoresMetrosImperial:
         return valor_metros / FatoresMetrosImperial[destination_unit]
     else:
@@ -36,8 +36,8 @@ def main_imperial():
 
         try:
             value_initial = float(input('Informe o valor que será convertido: '))
-            value_metro = ConversaoMetros(value_initial, source_unit)
-            value_final = MetrosDestino(value_metro, destination_unit)
+            value_metro = ImperialConversaoMetro(value_initial, source_unit)
+            value_final = ImperialMetroDestino(value_metro, destination_unit)
         
             print(f'Unidade de origem | {value_initial}{source_unit}')
             print(f'Unidade de destino | {value_final}{destination_unit}')
