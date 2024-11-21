@@ -1,13 +1,13 @@
-from sistema_metrico import metrico
-from sistema_imperial import imperial
+from measurement.conversores.metrico import main_metrico
+from measurement.conversores.imperial import main_imperial
 
-def conversao_medida(value, SistemaOrigem, SistemaDestino):
+def conversao_medida(SistemaOrigem, SistemaDestino):
     if SistemaOrigem == 'métrico' and SistemaDestino == 'imperial':
-        return metrico(value)
+        return main_metrico()
     elif SistemaOrigem == 'imperial' and SistemaDestino == 'métrico':
-        return imperial(value)
+        return main_imperial()
     else:
         return 'Conversão não suportada'
 
-value = 100
-print(conversao_medida(value, 'métrico', 'imperial'))
+
+print(conversao_medida('métrico', 'imperial'))
