@@ -51,15 +51,14 @@ def InterfaceUsuario():
                 sistema_destino=sistema_destino
             )
             
-            # resultado = ConverterEntreSistemas(unidade_origem='cm', unidade_destino='m', sistema_origem='métrico', sistema_destino='métrico', valor=10)
             print(f"Debug: {valor}, {unidade_origem}, {unidade_destino}, {sistema_origem}, {sistema_destino}")
-            print(f'\nResultado = {valor}{unidade_origem} é igual a {resultado}{unidade_destino}.\n')
+            print(f'\nResultado = {valor}{unidade_origem} é igual a | {resultado} | {unidade_destino}.\n')
     
         except ValueError:
             print('Valor inválido.')
             continue
 
-        # except Exception as e:
+        except Exception as e:
             print(f'Erro: {e}')
             continue
 
@@ -69,5 +68,8 @@ def InterfaceUsuario():
             print('Programa encerrado!')
             break
 
+
 if __name__ == '__main__':
     InterfaceUsuario()
+
+

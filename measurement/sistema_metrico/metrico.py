@@ -49,3 +49,10 @@ def MetricoMetroDestino(valor_em_metros, unidade_destino):
 
 # if __name__ == '__main__':
 #     main_metrico()
+
+valor_teste = 10  # 10 cm
+metros = MetricoConversaoMetro(valor_teste, 'cm')  # Deve retornar 0.1 metros
+print(f"{valor_teste} cm em metros: {metros}")
+
+valor_final = MetricoMetroDestino(metros, 'm')  # Deve retornar 0.1 metros
+print(f"{metros} metros em metros: {valor_final}")
