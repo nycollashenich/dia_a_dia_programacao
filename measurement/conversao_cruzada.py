@@ -11,7 +11,6 @@ def ConverterEntreSistemas(sistema_origem, sistema_destino, unidade_origem, unid
         valor_em_metros = ImperialConversaoMetro(valor, unidade_origem)
         return MetricoMetroDestino(valor_em_metros, unidade_destino)
 
-# bloco gpt   
     elif sistema_origem == 'métrico' and sistema_destino == 'métrico':
         valor_em_metros = MetricoConversaoMetro(valor, unidade_origem)
         return MetricoMetroDestino(valor_em_metros, unidade_destino)
@@ -19,8 +18,7 @@ def ConverterEntreSistemas(sistema_origem, sistema_destino, unidade_origem, unid
     elif sistema_origem == 'imperial' and sistema_destino == 'imperial':
         valor_em_metros = ImperialConversaoMetro(valor, unidade_origem)
         return ImperialMetroDestino(valor_em_metros, unidade_destino)
-    
-#
 
     else:
         raise ValueError('Conversão entre sistemas não suportada.')
+    
